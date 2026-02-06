@@ -184,9 +184,9 @@ export default function Home() {
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <Pill>Students & early creators</Pill>
-                  <Pill>Hip-hop listeners</Pill>
                   <Pill>People with something to say</Pill>
+                  <Pill>Hip-hop listeners</Pill>
+                  <Pill>Students & early creators</Pill>
                 </div>
               </div>
 
@@ -340,13 +340,13 @@ export default function Home() {
         </Section>
 
         {/* Audience */}
-        <Section title="Who Lyra is for (Initial focus)">
-        <div className="grid gap-4 md:grid-cols-3">
-        <BulletCard text="People with something to say" />
-        <BulletCard text="Hip-hop listeners who want to participate, not just consume" />
-        <BulletCard text="Students and emerging creators exploring music as a form of expression" />
-        </div>
-        </Section>
+       <Section title="Who Lyra is for (Initial focus)">
+      <div className="grid gap-4 md:grid-cols-3">
+      <BulletCard text="People with strong opinions, stories, or emotions, but no musical background" />
+      <BulletCard text="Hip-hop listeners who want to participate, not just consume" />
+      <BulletCard text="Students and emerging creators exploring music as a form of expression" />
+      </div>
+      </Section>
 
         {/* Stage */}
         <Section id="stage" title="Current Stage">
