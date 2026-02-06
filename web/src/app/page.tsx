@@ -1,4 +1,70 @@
+"use client";
+
+import React, { useMemo, useState } from "react";
+
 export default function Home() {
+  // ✅ 1) 换成你的 Formspree / Getform URL
+  // Formspree 示例： https://formspree.io/f/abcdwxyz
+  const FORM_ACTION_URL = "https://formspree.io/f/xdalnjrz";
+
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [message, setMessage] = useState<string>("");
+
+  const canSubmit = useMemo(() => {
+    const trimmed = email.trim();
+    // 简单邮箱校验（够用，不折腾）
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
+  }, [email]);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setMessage("");
+
+    if (!canSubmit) {
+      setStatus("error");
+      setMessage("Please enter a valid email.");
+      return;
+    }
+
+    if (!FORM_ACTION_URL || FORM_ACTION_URL.includes("XXXX")) {
+      setStatus("error");
+      setMessage("Form endpoint not set yet. Please update FORM_ACTION_URL.");
+      return;
+    }
+
+    try {
+      setStatus("loading");
+
+      const formData = new FormData();
+      formData.append("email", email.trim());
+      formData.append("source", "lyrapro-landing");
+      formData.append("project", "Lyra");
+
+      const res = await fetch(FORM_ACTION_URL, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setMessage("You’re in. We’ll reach out soon.");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setMessage("Something went wrong. Please try again in a moment.");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Network error. Please try again.");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background */}
@@ -29,6 +95,9 @@ export default function Home() {
             </a>
             <a className="hover:text-white transition" href="#stage">
               Stage
+            </a>
+            <a className="hover:text-white transition" href="#early-access">
+              Early Access
             </a>
             <a className="hover:text-white transition" href="#contact">
               Contact
@@ -75,12 +144,10 @@ export default function Home() {
               How it works
             </a>
             <a
-              href="https://www.linkedin.com/in/chenye-wang-6592b533b"
-              target="_blank"
-              rel="noreferrer"
+              href="#early-access"
               className="rounded-full border border-white/10 px-6 py-3 text-sm text-gray-300 hover:border-white/25 transition"
             >
-              LinkedIn
+              Early Access
             </a>
           </div>
 
@@ -97,6 +164,79 @@ export default function Home() {
               title="Who it serves"
               text="People with something to say, creators with limited resources, and students exploring voice through music."
             />
+          </div>
+        </section>
+
+        {/* Early Access (high-signal section) */}
+        <section id="early-access" className="py-14 border-t border-white/10">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+            <div className="grid gap-10 md:grid-cols-2 md:items-center">
+              <div>
+                <div className="text-xs uppercase tracking-[0.35em] text-gray-400">
+                  Early Access
+                </div>
+                <h2 className="mt-3 text-2xl md:text-3xl font-semibold">
+                  Join the waitlist for Lyra
+                </h2>
+                <p className="mt-4 text-gray-300 leading-relaxed">
+                  We’re building a guided, conversational path from intent → hip-hop output.
+                  If you want to shape the first version, leave your email.
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <Pill>Students & early creators</Pill>
+                  <Pill>Hip-hop listeners</Pill>
+                  <Pill>People with something to say</Pill>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-black/30 p-6">
+                <form onSubmit={onSubmit} className="space-y-3">
+                  <label className="block text-sm text-gray-300">
+                    Email
+                    <div className="mt-2 flex flex-col sm:flex-row gap-3">
+                      <input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="you@email.com"
+                        className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-white/25"
+                        required
+                      />
+                      <button
+                        type="submit"
+                        disabled={status === "loading" || !canSubmit}
+                        className="rounded-xl bg-purple-600 px-5 py-3 text-sm font-semibold hover:bg-purple-500 transition disabled:opacity-50 disabled:hover:bg-purple-600"
+                      >
+                        {status === "loading" ? "Submitting..." : "Get Early Access"}
+                      </button>
+                    </div>
+                  </label>
+
+                  <div className="text-xs text-gray-500">
+                    No spam. Just product updates + early invites.
+                  </div>
+
+                  {message ? (
+                    <div
+                      className={
+                        "rounded-xl border px-4 py-3 text-sm " +
+                        (status === "success"
+                          ? "border-green-500/30 bg-green-500/10 text-green-200"
+                          : "border-red-500/30 bg-red-500/10 text-red-200")
+                      }
+                    >
+                      {message}
+                    </div>
+                  ) : null}
+
+                  <div className="text-xs text-gray-500">
+                    Tip: For meetings, this section signals traction readiness.
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
 
