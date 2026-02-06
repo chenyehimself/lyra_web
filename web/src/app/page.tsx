@@ -341,11 +341,11 @@ export default function Home() {
 
         {/* Audience */}
         <Section title="Who Lyra is for (Initial focus)">
-          <div className="grid gap-4 md:grid-cols-3">
-            <BulletCard text="People with strong opinions, stories, or emotions, but no musical background" />
-            <BulletCard text="Hip-hop listeners who want to participate, not just consume" />
-            <BulletCard text="Students and emerging creators exploring music as a form of expression" />
-          </div>
+        <div className="grid gap-4 md:grid-cols-3">
+        <BulletCard text="People with something to say" />
+        <BulletCard text="Hip-hop listeners who want to participate, not just consume" />
+        <BulletCard text="Students and emerging creators exploring music as a form of expression" />
+        </div>
         </Section>
 
         {/* Stage */}
