@@ -18,7 +18,7 @@ export const metadata = {
   title: "Lyra",
   description: "An instrument for everyone to express through music",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 };
 
