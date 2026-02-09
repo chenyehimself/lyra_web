@@ -401,6 +401,10 @@ export default function Home() {
                 <div className="mt-6 space-y-2 text-gray-300">
                   <div>
                     Email:{" "}
+                    <a className="text-white hover:underline" href="mailto:chenyewang@lyrapro.ai">
+                      chenyewang@lyrapro.ai
+                    </a>{" "}
+                    /{" "}
                     <a className="text-white hover:underline" href="mailto:cwang263@jh.edu">
                       cwang263@jh.edu
                     </a>{" "}
