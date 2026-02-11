@@ -106,6 +106,9 @@ export default function Home() {
             <a className="hover:text-white transition" href="#contact">
               Contact
             </a>
+            <a className="hover:text-white transition" href="#progress">
+              Progress
+            </a>
           </nav>
 
           <div className="flex items-center gap-2 text-gray-300">
@@ -375,6 +378,61 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* Progress */}
+        <Section id="progress" title="Progress (Public Build Log)">
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card>
+            <div className="text-xs uppercase tracking-widest text-gray-400">
+              Demo #1
+            </div>
+            <div className="mt-2 text-lg font-semibold">
+              Trap Beat Prompt → Generated Output
+            </div>
+
+            <p className="mt-4 text-gray-300 leading-relaxed">
+              A friend-proposed demo prompt used to generate the first audio output.
+            </p>
+
+            <div className="mt-5 rounded-2xl border border-white/10 bg-black/40 p-4">
+              <div className="text-xs uppercase tracking-widest text-gray-500">
+                Prompt (JSON)
+              </div>
+              <pre className="mt-3 overflow-x-auto text-sm text-gray-200">
+            {`{ "text": "A happy trap beat in 160 bpm Fm about spring and life" }`}
+              </pre>
+            </div>
+
+            <div className="mt-5">
+            <div className="text-xs uppercase tracking-widest text-gray-500">
+              Generated Audio
+            </div>
+
+            <audio controls className="mt-3 w-full rounded-xl">
+              <source src="/demos/demo-001.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <div className="mt-2 text-xs text-gray-500">
+              Prompt → Structured → Generated output (Demo #1)
+            </div>
+          </div>
+           </Card>
+
+          <Card>
+            <div className="text-xs uppercase tracking-widest text-gray-400">
+              Notes
+            </div>
+            <div className="mt-2 text-lg font-semibold">What this proves</div>
+            <ul className="mt-4 space-y-3 text-gray-300">
+              <li>• A clear text prompt can drive a consistent musical target</li>
+              <li>• We can attach audio artifacts to a public progress log</li>
+              <li>• Next step: add playback + iterate prompt controls</li>
+            </ul>
+          </Card>
+        </div>
+        </Section>
+
+        
         {/* Founder */}
         <Section title="About the Founder">
           <Card>
