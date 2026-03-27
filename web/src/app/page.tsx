@@ -3,8 +3,6 @@
 import React, { useMemo, useState } from "react";
 
 export default function Home() {
-  // ✅ 1) 换成你的 Formspree / Getform URL
-  // Formspree 示例： https://formspree.io/f/abcdwxyz
   const FORM_ACTION_URL = "https://formspree.io/f/xdalnjrz";
 
   const [email, setEmail] = useState("");
@@ -119,23 +117,29 @@ export default function Home() {
         </header>
 
         {/* Hero */}
+                {/* Hero */}
         <section className="pt-10 pb-14">
           <p className="text-xs uppercase tracking-[0.35em] text-gray-400">
-            An AI Hip-Hop Music Platform for Expression and Voice
+            A New Instrument for Expression
           </p>
 
           <h1 className="mt-6 text-5xl md:text-7xl font-bold leading-[1.03] tracking-tight">
-            Turn ideas into hip-hop.
+            You have something to say.
             <br />
-            Make voice easier than production.
+            Lyra turns it into hip-hop.
           </h1>
 
           <p className="mt-7 max-w-3xl text-lg md:text-xl leading-relaxed text-gray-300">
-            Lyra is an early-stage AI music platform centered on hip-hop as a primary medium for
-            self-expression. Inspired by the lyre—one of the earliest and most accessible musical
-            instruments—Lyra helps anyone turn ideas, emotions, images, or words into music, even
-            without formal musical training.
+            Turn your ideas into music — in under a minute.
           </p>
+
+          <div className="mt-6 max-w-3xl text-base md:text-lg leading-relaxed text-gray-400 space-y-4">
+            <p>
+              Inspired by the lyre — one of the simplest instruments in history — Lyra is built to
+              make music feel just as accessible.
+            </p>
+            <p>No training. Just expression.</p>
+          </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
@@ -161,15 +165,15 @@ export default function Home() {
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             <FeatureCard
               title="What it is"
-              text="A guided, conversational AI experience that transforms intent into hip-hop beats or full tracks."
+              text="A conversational tool that turns intent into hip-hop."
             />
             <FeatureCard
               title="Why it matters"
-              text="Hip-hop is a global language of expression—Lyra lowers the barrier to participation in that ecosystem."
+              text="Hip-hop is a global language. Lyra makes it easier to speak through it."
             />
             <FeatureCard
               title="Who it serves"
-              text="People with something to say, creators with limited resources, and students exploring voice through music."
+              text="Anyone with something to say — no production background required."
             />
           </div>
         </section>
@@ -186,8 +190,8 @@ export default function Home() {
                   Join the waitlist for Lyra
                 </h2>
                 <p className="mt-4 text-gray-300 leading-relaxed">
-                  We’re building a guided, conversational path from intent → hip-hop output.
-                  If you want to shape the first version, leave your email.
+                  We’re building a new way to turn intent into hip-hop.
+                  If you want early access — or want to help shape the first version — leave your email.
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -222,7 +226,7 @@ export default function Home() {
                   </label>
 
                   <div className="text-xs text-gray-500">
-                    No spam. Just product updates + early invites.
+                    We’ll only reach out for product updates, early access, and pilot invites.
                   </div>
 
                   {message ? (
@@ -252,23 +256,22 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <p className="text-gray-300 leading-relaxed">
-                At its core, Lyra treats music not as a technical skill, but as a language for
-                participation and voice.
+                Lyra treats music less like a technical craft and more like a form of expression.
               </p>
               <div className="mt-5 grid gap-3">
                 <Pill>Ideas → Music</Pill>
-                <Pill>Images + Words → Tracks</Pill>
-                <Pill>Accessible by design</Pill>
+                <Pill>Words + Images → Tracks</Pill>
+                <Pill>Accessible by Design</Pill>
               </div>
             </Card>
 
             <Card>
               <p className="text-gray-300 leading-relaxed">
-                Inspired by the lyre—simple, expressive, and historically accessible—Lyra aims to
-                make musical expression feel “pick-up-and-play” for anyone.
+                Inspired by the lyre — simple, expressive, and easy to pick up — Lyra is designed
+                to make music creation feel immediate for anyone.
               </p>
               <p className="mt-4 text-gray-400 leading-relaxed">
-                The goal is not to replace creativity, but to expand who can participate.
+                The goal is not to replace creativity. It is to widen access to it.
               </p>
             </Card>
           </div>
@@ -279,13 +282,13 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-3">
             <Card className="md:col-span-2">
               <p className="text-gray-300 leading-relaxed">
-                Hip-hop is not just a music genre—it is one of the most globally recognized and widely
-                shared languages of expression today. Across cultures and communities, hip-hop already
-                functions as a common space where ideas, emotions, and identities are exchanged.
+                Hip-hop is more than a genre. It is one of the world’s most recognizable languages of
+                expression.
               </p>
               <p className="mt-4 text-gray-300 leading-relaxed">
-                The challenge is not that people lack something to say, but that entering this
-                expressive ecosystem still requires technical skills, tools, and insider knowledge.
+                Across cultures and communities, people already use it to express identity, emotion,
+                opinion, and point of view. The issue is not that people have nothing to say. The
+                issue is that participating still takes tools, skills, and insider knowledge.
               </p>
             </Card>
 
@@ -293,7 +296,7 @@ export default function Home() {
               <div className="text-xs uppercase tracking-widest text-gray-400">Focus</div>
               <div className="mt-2 text-lg font-semibold">Participation</div>
               <p className="mt-3 text-gray-300 leading-relaxed">
-                Lyra lowers the barrier to engagement with a living global medium of expression.
+                Lyra lowers the barrier to entering a living global culture of expression.
               </p>
             </Card>
           </div>
@@ -304,54 +307,51 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <p className="text-gray-300 leading-relaxed">
-                Many people have ideas, perspectives, and emotions they want to express. Yet meaningful
-                participation in dominant cultural forms like hip-hop often requires production
-                expertise, access to tools, and familiarity with complex workflows.
+                A lot of people have something to express. Very few have the time, training, or tools
+                to turn that into music.
               </p>
             </Card>
             <Card>
               <p className="text-gray-300 leading-relaxed">
-                As a result, a powerful expressive ecosystem exists—but remains inaccessible to many
-                who would otherwise contribute to it.
+                That leaves one of the most powerful forms of cultural participation out of reach for
+                the very people who want to use it.
               </p>
             </Card>
           </div>
         </Section>
 
-        {/* Approach */}
+        {/* Approach */}       <Section title="Who Lyra is for (Initial focus)">
         <Section id="approach" title="Our Approach">
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <div className="text-xs uppercase tracking-widest text-gray-400">Principle</div>
               <div className="mt-2 text-lg font-semibold">Intent before generation</div>
               <p className="mt-4 text-gray-300 leading-relaxed">
-                Users first interact with an AI-guided conversational interface that helps clarify what
-                they want to express.
+                Lyra starts with conversation. Before anything is generated, the system helps users
+                clarify what they want to say, how they want it to feel, and what kind of sound fits it.
               </p>
             </Card>
 
             <Card>
               <div className="text-xs uppercase tracking-widest text-gray-400">Pipeline</div>
-              <div className="mt-2 text-lg font-semibold">Structure → Generate → Share</div>
+              <div className="mt-2 text-lg font-semibold">Clarify → Structure → Generate</div>
               <p className="mt-4 text-gray-300 leading-relaxed">
-                Only after intent is sufficiently articulated does Lyra structure the input and pass it
-                into a multi-agent generation pipeline to produce hip-hop beats or full tracks aligned
-                with the user’s voice.
+                Once intent is clear, Lyra structures the input and sends it through a generation
+                pipeline designed for hip-hop output — from beat ideas to fuller track drafts.
               </p>
               <p className="mt-4 text-gray-400 leading-relaxed">
-                Technical complexity is intentionally abstracted to keep the experience intuitive,
-                accessible, and expressive.
+                The complexity stays under the hood so the experience feels simple, fast, and expressive.
               </p>
             </Card>
           </div>
         </Section>
 
         {/* Audience */}
-       <Section title="Who Lyra is for (Initial focus)">
+       <Section title="Who Lyra is for">
       <div className="grid gap-4 md:grid-cols-3">
-      <BulletCard text="People with strong opinions, stories, or emotions, but no musical background" />
+      <BulletCard text="People with stories, opinions, or emotions to express — but no music production background" />
       <BulletCard text="Hip-hop listeners who want to participate, not just consume" />
-      <BulletCard text="Students and emerging creators exploring music as a form of expression" />
+      <BulletCard text="Students and emerging creators exploring music as a creative outlet" />
       </div>
       </Section>
 
@@ -360,76 +360,49 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2">
             <Card>
               <ul className="space-y-3 text-gray-300">
-                <li>• Early-stage venture focused on hip-hop as a medium for expression</li>
-                <li>• Core team formed (Computer Music + Computer Science)</li>
-                <li>• Conversational input + intent-structuring workflow defined</li>
-                <li>• Demo development and user validation in progress</li>
+                <li>• Early-stage company building a new expressive interface for hip-hop creation</li>
+                <li>• Core team in place across Computer Music and Computer Science</li>
+                <li>• Conversational workflow and intent-structuring logic defined</li>
+                <li>• Demo development and early validation in progress</li>
               </ul>
             </Card>
             <Card>
               <div className="text-xs uppercase tracking-widest text-gray-400">What’s next</div>
-              <div className="mt-2 text-lg font-semibold">Demo → Interviews → Refinement</div>
+              <div className="mt-2 text-lg font-semibold">Demo → Feedback → Refinement</div>
               <ul className="mt-4 space-y-3 text-gray-300">
-                <li>• Build a functional demo: conversational input → hip-hop output</li>
-                <li>• Conduct user interviews: expression, autonomy, usability</li>
-                <li>• Refine workflows: clarity, simplicity, creative control</li>
+                <li>• Ship a functional demo from conversational input to hip-hop output</li>
+                <li>• Run early user conversations around expression, usability, and control</li>
+                <li>• Refine the workflow for clarity, speed, and creative ownership</li>
               </ul>
             </Card>
           </div>
         </Section>
 
         {/* Progress */}
-        <Section id="progress" title="Progress (Public Build Log)">
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card>
-            <div className="text-xs uppercase tracking-widest text-gray-400">
-              Demo #1
-            </div>
-            <div className="mt-2 text-lg font-semibold">
-              Trap Beat Prompt → Generated Output
-            </div>
+        <Section id="progress" title="Progress">
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <div className="text-xs uppercase tracking-widest text-gray-400">What we have</div>
+              <div className="mt-2 text-lg font-semibold">Core direction is defined</div>
+              <ul className="mt-4 space-y-3 text-gray-300">
+                <li>• Product direction centered on hip-hop as a tool for expression</li>
+                <li>• Core team in place across music and engineering</li>
+                <li>• Intent-first workflow and system logic mapped out</li>
+                <li>• Early demo architecture already under development</li>
+              </ul>
+            </Card>
 
-            <p className="mt-4 text-gray-300 leading-relaxed">
-              A friend-proposed demo prompt used to generate the first audio output.
-            </p>
-
-            <div className="mt-5 rounded-2xl border border-white/10 bg-black/40 p-4">
-              <div className="text-xs uppercase tracking-widest text-gray-500">
-                Prompt (JSON)
-              </div>
-              <pre className="mt-3 overflow-x-auto text-sm text-gray-200">
-            {`{ "text": "A happy trap beat in 160 bpm Fm about spring and life" }`}
-              </pre>
-            </div>
-
-            <div className="mt-5">
-            <div className="text-xs uppercase tracking-widest text-gray-500">
-              Generated Audio
-            </div>
-
-            <audio controls className="mt-3 w-full rounded-xl">
-              <source src="/demos/demo-001.wav" type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-
-            <div className="mt-2 text-xs text-gray-500">
-              Prompt → Structured → Generated output (Demo #1)
-            </div>
+            <Card>
+              <div className="text-xs uppercase tracking-widest text-gray-400">What we’re doing now</div>
+              <div className="mt-2 text-lg font-semibold">Turning direction into a working demo</div>
+              <ul className="mt-4 space-y-3 text-gray-300">
+                <li>• Building the first usable demo from conversational input to hip-hop output</li>
+                <li>• Testing how users express intent, emotion, and creative control</li>
+                <li>• Refining the workflow for speed, clarity, and editability</li>
+                <li>• Preparing for early feedback, pilot use, and iteration</li>
+              </ul>
+            </Card>
           </div>
-           </Card>
-
-          <Card>
-            <div className="text-xs uppercase tracking-widest text-gray-400">
-              Notes
-            </div>
-            <div className="mt-2 text-lg font-semibold">What this proves</div>
-            <ul className="mt-4 space-y-3 text-gray-300">
-              <li>• A clear text prompt can drive a consistent musical target</li>
-              <li>• We can attach audio artifacts to a public progress log</li>
-              <li>• Next step: add playback + iterate prompt controls</li>
-            </ul>
-          </Card>
-        </div>
         </Section>
 
         
@@ -438,9 +411,8 @@ export default function Home() {
           <Card>
             <p className="text-gray-300 leading-relaxed">
               Chenye Wang is a Computer Music student at the Peabody Institute of Johns Hopkins
-              University, with a background in music creation, computational tools, and creative
-              project leadership. His work focuses on building systems that expand access to meaningful
-              cultural and creative expression.
+              University. His work sits at the intersection of music, computation, and creative
+              direction, with a focus on building tools that expand access to meaningful expression.
             </p>
           </Card>
         </Section>
@@ -452,8 +424,8 @@ export default function Home() {
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold">Contact</h2>
                 <p className="mt-4 text-gray-300 leading-relaxed">
-                  If you’re interested in supporting Lyra—through mentorship, resources, partnerships,
-                  or funding—reach out.
+                  If you want to support Lyra through mentorship, partnerships, pilot conversations,
+                  or funding, please reach out.
                 </p>
 
                 <div className="mt-6 space-y-2 text-gray-300">
@@ -489,13 +461,13 @@ export default function Home() {
               <div className="rounded-2xl border border-white/10 bg-black/30 p-6">
                 <div className="text-xs uppercase tracking-widest text-gray-400">Quick pitch</div>
                 <div className="mt-3 text-lg font-semibold">
-                  “Hip-hop is the world’s shared language of expression.
+                  “You have something to say.
                   <br />
-                  Lyra makes participation accessible.”
+                  Lyra turns it into hip-hop.”
                 </div>
                 <p className="mt-4 text-gray-300 leading-relaxed">
-                  A guided conversational interface turns intent into hip-hop beats or full tracks—so
-                  more people can speak through a dominant cultural form.
+                  Lyra is building a conversational interface for music expression — making it easier
+                  for anyone to turn ideas, emotions, and perspective into hip-hop.
                 </p>
               </div>
             </div>
