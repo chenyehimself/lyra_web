@@ -241,10 +241,6 @@ export default function Home() {
                       {message}
                     </div>
                   ) : null}
-
-                  <div className="text-xs text-gray-500">
-                    Tip: For meetings, this section signals traction readiness.
-                  </div>
                 </form>
               </div>
             </div>
@@ -320,7 +316,7 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Approach */}       <Section title="Who Lyra is for (Initial focus)">
+        {/* Approach */}
         <Section id="approach" title="Our Approach">
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
