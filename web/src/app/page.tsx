@@ -104,7 +104,7 @@ export default function Home() {
             <a className="hover:text-white transition" href="#contact">
               Contact
             </a>
-            <a className="hover:text-white transition" href="#progress">
+            <a className="hover:text-white transition" href="/progress">
               Progress
             </a>
           </nav>
@@ -398,6 +398,16 @@ export default function Home() {
                 <li>• Preparing for early feedback, pilot use, and iteration</li>
               </ul>
             </Card>
+          </div>
+
+          <div className="mt-6">
+            <a
+              href="/progress"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm text-gray-300 hover:border-white/30 hover:text-white transition"
+            >
+              View detailed development progress
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </Section>
 
